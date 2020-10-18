@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CalculatorTest</string>
+
+    <array name="paymentFrequency">
+        <item>Payment Frequency</item>
+        <item>Biweekly</item>
+        <item>Monthly</item>
+    </array>
+</resources>
