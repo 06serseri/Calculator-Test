@@ -11,6 +11,7 @@
 
     <EditText
         android:id="@+id/inputVehicleMSRP"
+        style="@style/EditTextStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -24,6 +25,7 @@
 
     <EditText
         android:id="@+id/inputTermInMonths"
+        style="@style/EditTextStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -36,10 +38,12 @@
 
     <EditText
         android:id="@+id/inputRate"
+        style="@style/EditTextStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+
         android:hint="Interest Rate (%)"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/inputTermInMonths"
@@ -48,6 +52,7 @@
 
     <EditText
         android:id="@+id/inputTaxRate"
+        style="@style/EditTextStyle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -60,11 +65,12 @@
 
     <TextView
         android:id="@+id/outputText"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="24sp"
         android:hint="Payment"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/buttonCalculate"
         app:layout_constraintStart_toStartOf="@+id/buttonCalculate"
         app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
@@ -73,6 +79,7 @@
         android:id="@+id/buttonCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_1"
         android:layout_marginTop="16dp"
         android:text="Calculate"
         android:textAllCaps="false"
@@ -80,18 +87,34 @@
         app:layout_constraintStart_toStartOf="@+id/spinnerFrequency"
         app:layout_constraintTop_toBottomOf="@+id/spinnerFrequency" />
 
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_1"
+        android:text="Reset"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />" />
+
     <Spinner
         android:id="@+id/spinnerFrequency"
         android:layout_width="wrap_content"
+        style="@style/SpinnerStyle"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:entries="@array/paymentFrequency"
+        android:spinnerMode="dropdown"
+        android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="@+id/inputTaxRate"
         app:layout_constraintStart_toStartOf="@+id/inputTaxRate"
         app:layout_constraintTop_toBottomOf="@+id/inputTaxRate" />
 
     <TextView
         android:id="@+id/textDesignedBy"
+        style="@style/AppTheme.Footnote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
