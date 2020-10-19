@@ -19,7 +19,7 @@ public class LeasingActivity extends AppCompatActivity {
 
     EditText inputVehicleMSRP, inputTermInMonths, inputRate, inputVehicleResidualValue, inputTaxRate;
     TextView outputText;
-    Button buttonCalculate;
+    Button buttonCalculate, buttonReset;
     Spinner spinnerFrequency;
     ConstraintLayout constraintLayoutParent;
 
@@ -36,56 +36,50 @@ public class LeasingActivity extends AppCompatActivity {
                 initCalculate();
             }
         });
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initReset();
+            }
+        });
     }
 
     private void initCalculate(){
         Log.d(TAG, "initRegister: Started");
         if(validateData()){
-            showSnackBar();
-            //Toast.makeText(this, "You clicked calculate!", Toast.LENGTH_SHORT).show();
+            String getMsrp = inputVehicleMSRP.getText().toString();
+            Leasing.vehicleMsrp = Integer.parseInt(getMsrp);//Replace MSRP with Financing.vehicleMsrp
+
+            String getResidualValue = inputVehicleResidualValue.getText().toString();
+            Leasing.residualValue = Integer.parseInt(getResidualValue);//Replace MSRP with Financing.vehicleMsrp
+
+            String getTerm = inputTermInMonths.getText().toString();
+            Leasing.termInMonths = Double.parseDouble(getTerm);
+
+            String getRate = inputRate.getText().toString();
+            Leasing.rate = Double.parseDouble(getRate);
+
+            String getTaxRate = inputTaxRate.getText().toString();
+            Leasing.taxRate = Double.parseDouble(getTaxRate);
+
+            Leasing.paymentFrequency = spinnerFrequency.getSelectedItem().toString();
+
+            Leasing.calculateLeasing();
+            Double result = Leasing.payment;
+
+            String outputPayment = String.valueOf(String.format("%.2f",result));
+            outputText.setText("$" + outputPayment);
         }
     }
-    private void showSnackBar(){
-        Log.d(TAG, "showSnackBar: Started");
 
-        String getMsrp = inputVehicleMSRP.getText().toString();
-        Leasing.vehicleMsrp = Integer.parseInt(getMsrp);//Replace MSRP with Financing.vehicleMsrp
-
-        String getResidualValue = inputVehicleResidualValue.getText().toString();
-        Leasing.residualValue = Integer.parseInt(getResidualValue);//Replace MSRP with Financing.vehicleMsrp
-
-        String getTerm = inputTermInMonths.getText().toString();
-        Leasing.termInMonths = Double.parseDouble(getTerm);
-
-        String getRate = inputRate.getText().toString();
-        Leasing.rate = Double.parseDouble(getRate);
-
-        String getTaxRate = inputTaxRate.getText().toString();
-        Leasing.taxRate = Double.parseDouble(getTaxRate);
-
-        Leasing.paymentFrequency = spinnerFrequency.getSelectedItem().toString();
-
-        Leasing.calculateLeasing();
-        Double result = Leasing.payment;
-
-        String snackText = String.valueOf(String.format("%.2f",result));
-        String outputPayment = String.valueOf(String.format("%.2f",result));
-        outputText.setText(outputPayment);
-
-        Log.d(TAG, "showSnackBar: Snack Bar Text: " + snackText);
-        Snackbar.make(constraintLayoutParent, snackText, Snackbar.LENGTH_INDEFINITE)
-                .setAction("Dismiss", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        inputVehicleMSRP.setText("");
-                        inputVehicleResidualValue.setText("");
-                        inputTermInMonths.setText("");
-                        inputRate.setText("");
-                        inputTaxRate.setText("");
-                        outputText.setText("");
-                        spinnerFrequency.setSelection(0);
-                    }
-                }).show();
+    public void initReset() {
+        inputVehicleMSRP.setText("");
+        inputVehicleResidualValue.setText("");
+        inputTermInMonths.setText("");
+        inputRate.setText("");
+        inputTaxRate.setText("");
+        outputText.setText("");
+        spinnerFrequency.setSelection(0);
     }
 
     private boolean validateData(){
@@ -128,6 +122,7 @@ public class LeasingActivity extends AppCompatActivity {
         spinnerFrequency = findViewById(R.id.spinnerFrequency);
 
         buttonCalculate = findViewById(R.id.buttonCalculate);
+        buttonReset = findViewById(R.id.buttonReset);
 
         outputText = findViewById(R.id.outputText);
         constraintLayoutParent = findViewById(R.id.constraintLayoutParent);
