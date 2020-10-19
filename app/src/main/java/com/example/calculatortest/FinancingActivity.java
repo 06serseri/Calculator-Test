@@ -46,46 +46,28 @@ public class FinancingActivity extends AppCompatActivity {
     private void initCalculate(){
         Log.d(TAG, "initRegister: Started");
         if(validateData()){
-            showSnackBar();
+
             //Get rid of showSnackBar()
+            String getMsrp = inputVehicleMSRP.getText().toString();
+            TestFinancing.vehicleMsrp = Integer.parseInt(getMsrp);//Replace MSRP with Financing.vehicleMsrp
+
+            String getTerm = inputTermInMonths.getText().toString();
+            TestFinancing.termInMonths = Double.parseDouble(getTerm);
+
+            String getRate = inputRate.getText().toString();
+            TestFinancing.rate = Double.parseDouble(getRate);
+
+            String getTaxRate = inputTaxRate.getText().toString();
+            TestFinancing.taxRate = Double.parseDouble(getTaxRate);
+
+            TestFinancing.paymentFrequency = spinnerFrequency.getSelectedItem().toString();
+
+            TestFinancing.calculateFinancing();
+            Double result = TestFinancing.payment;
+
+            String outputPayment = String.valueOf(String.format("%.2f",result));
+            outputText.setText("$" + outputPayment);
         }
-    }
-    private void showSnackBar(){
-        Log.d(TAG, "showSnackBar: Started");
-        String getMsrp = inputVehicleMSRP.getText().toString();
-        TestFinancing.vehicleMsrp = Integer.parseInt(getMsrp);//Replace MSRP with Financing.vehicleMsrp
-
-        String getTerm = inputTermInMonths.getText().toString();
-        TestFinancing.termInMonths = Double.parseDouble(getTerm);
-
-        String getRate = inputRate.getText().toString();
-        TestFinancing.rate = Double.parseDouble(getRate);
-
-        String getTaxRate = inputTaxRate.getText().toString();
-        TestFinancing.taxRate = Double.parseDouble(getTaxRate);
-
-        TestFinancing.paymentFrequency = spinnerFrequency.getSelectedItem().toString();
-
-        TestFinancing.calculateFinancing();
-        Double result = TestFinancing.payment;
-
-        String snackText = String.valueOf(String.format("%.2f",result));
-        String outputPayment = String.valueOf(String.format("%.2f",result));
-        outputText.setText("$" + outputPayment);
-
-        Log.d(TAG, "showSnackBar: Snack Bar Text: " + snackText);
-        Snackbar.make(constraintLayoutParent, snackText, Snackbar.LENGTH_INDEFINITE)
-                .setAction("Dismiss", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        inputVehicleMSRP.setText("");
-                        inputTermInMonths.setText("");
-                        inputRate.setText("");
-                        inputTaxRate.setText("");
-                        outputText.setText("");
-                        spinnerFrequency.setSelection(0);
-                    }
-                }).show();
     }
 
     private void initReset(){
