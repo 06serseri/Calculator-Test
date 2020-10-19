@@ -18,7 +18,7 @@ public class FinancingActivity extends AppCompatActivity {
 
     EditText inputVehicleMSRP, inputTermInMonths, inputRate, inputTaxRate;
     TextView outputText;
-    Button buttonCalculate;
+    Button buttonCalculate, buttonReset;
     Spinner spinnerFrequency;
     ConstraintLayout constraintLayoutParent;
 
@@ -35,13 +35,19 @@ public class FinancingActivity extends AppCompatActivity {
                 initCalculate();
             }
         });
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initReset();
+            }
+        });
     }
 
     private void initCalculate(){
         Log.d(TAG, "initRegister: Started");
         if(validateData()){
             showSnackBar();
-            //Toast.makeText(this, "You clicked calculate!", Toast.LENGTH_SHORT).show();
+            //Get rid of showSnackBar()
         }
     }
     private void showSnackBar(){
@@ -65,7 +71,7 @@ public class FinancingActivity extends AppCompatActivity {
 
         String snackText = String.valueOf(String.format("%.2f",result));
         String outputPayment = String.valueOf(String.format("%.2f",result));
-        outputText.setText(outputPayment);
+        outputText.setText("$" + outputPayment);
 
         Log.d(TAG, "showSnackBar: Snack Bar Text: " + snackText);
         Snackbar.make(constraintLayoutParent, snackText, Snackbar.LENGTH_INDEFINITE)
@@ -80,6 +86,15 @@ public class FinancingActivity extends AppCompatActivity {
                         spinnerFrequency.setSelection(0);
                     }
                 }).show();
+    }
+
+    private void initReset(){
+        inputVehicleMSRP.setText("");
+        inputTermInMonths.setText("");
+        inputRate.setText("");
+        inputTaxRate.setText("");
+        outputText.setText("");
+        spinnerFrequency.setSelection(0);
     }
     private boolean validateData(){
         Log.d(TAG, "validateData: Started");
@@ -119,6 +134,7 @@ public class FinancingActivity extends AppCompatActivity {
         spinnerFrequency = findViewById(R.id.spinnerFrequency);
 
         buttonCalculate = findViewById(R.id.buttonCalculate);
+        buttonReset = findViewById(R.id.buttonReset);
 
         outputText = findViewById(R.id.outputText);
         constraintLayoutParent = findViewById(R.id.constraintLayoutParent);
