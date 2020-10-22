@@ -17,6 +17,7 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Vehicle MSRP"
+        android:textColorHint="#ff9500"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-
         android:hint="Interest Rate (%)"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/inputTermInMonths"
@@ -68,41 +68,40 @@
         style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:hint="Payment"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/buttonCalculate"
-        app:layout_constraintStart_toStartOf="@+id/buttonCalculate"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
-
-    <Button
-        android:id="@+id/buttonCalculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_button_1"
-        android:layout_marginTop="16dp"
-        android:text="Calculate"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerFrequency"
-        app:layout_constraintStart_toStartOf="@+id/spinnerFrequency"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFrequency" />
+        app:layout_constraintStart_toStartOf="@+id/buttonReset"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReset" />
 
     <Button
         android:id="@+id/buttonReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_button_1"
         android:text="Reset"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonCalculate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />" />
+        app:layout_constraintStart_toStartOf="@+id/spinnerFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFrequency" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_button_1"
+        android:text="Calculate"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerFrequency"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFrequency" />
 
     <Spinner
         android:id="@+id/spinnerFrequency"
-        android:layout_width="wrap_content"
         style="@style/SpinnerStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:entries="@array/paymentFrequency"
@@ -124,4 +123,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toTopOf="@+id/textDesignedBy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outputText">
+
+    </com.google.android.gms.ads.AdView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
