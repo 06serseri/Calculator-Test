@@ -12,6 +12,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LeasingActivity extends AppCompatActivity {
@@ -22,6 +27,7 @@ public class LeasingActivity extends AppCompatActivity {
     Button buttonCalculate, buttonReset;
     Spinner spinnerFrequency;
     ConstraintLayout constraintLayoutParent;
+    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,15 @@ public class LeasingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_leasing);
 
         initViews();
+
+        //ca-app-pub-9425777381690046~6829510960
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,5 +141,6 @@ public class LeasingActivity extends AppCompatActivity {
 
         outputText = findViewById(R.id.outputText);
         constraintLayoutParent = findViewById(R.id.constraintLayoutParent);
+        adView = findViewById(R.id.adView);
     }
 }
