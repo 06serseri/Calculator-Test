@@ -10,48 +10,53 @@
 
 
     //TODO: Buttons does not work whole cardview should be clickable
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardViewGoToFinancing"
         android:layout_width="213dp"
         android:layout_height="120dp"
         android:layout_marginTop="30dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
+        android:outlineSpotShadowColor="#ff9500"
+        android:outlineAmbientShadowColor="#ff9500"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayoutFinancingActivity"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutFinancingActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imageViewFinancing"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/go_to_financing_stock_photo"
-                        tools:layout_editor_absoluteX="-66dp"
-                        tools:layout_editor_absoluteY="-34dp" />
+            <ImageView
+                android:id="@+id/imageViewFinancing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/go_to_financing_stock_photo"
+                tools:layout_editor_absoluteX="-66dp"
+                tools:layout_editor_absoluteY="-34dp" />
 
-                    <Button
-                        android:id="@+id/buttonToFinancingActivity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:background="@android:color/transparent"
-                        android:text="Buy"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0"/>
+            <TextView
+                android:id="@+id/textLabelBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:text="Buy"
+                android:textAllCaps="false"
+                android:textColor="#ff9500"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
 
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -60,41 +65,46 @@
         android:layout_width="213dp"
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
+        android:outlineSpotShadowColor="#ff9500"
+        android:outlineAmbientShadowColor="#ff9500"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewGoToFinancing"
         app:layout_constraintStart_toStartOf="@+id/cardViewGoToFinancing"
         app:layout_constraintTop_toBottomOf="@+id/cardViewGoToFinancing">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayoutToLeasingActivity"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutToLeasingActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/buttonToLeasingActivity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:background="@android:color/transparent"
-                        android:text="Lease"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+            <ImageView
+                android:id="@+id/imageViewToLeasing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/go_to_leasing_stock_photo"
+                tools:layout_editor_absoluteX="-66dp"
+                tools:layout_editor_absoluteY="-34dp" />
 
-                    <ImageView
-                        android:id="@+id/imageViewToLeasing"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/go_to_leasing_stock_photo"
-                        tools:layout_editor_absoluteX="-66dp"
-                        tools:layout_editor_absoluteY="-34dp" />
+            <TextView
+                android:id="@+id/textLabelLease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:text="Lease"
+                android:textAllCaps="false"
+                android:textColor="#ff9500"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -104,41 +114,45 @@
         android:layout_width="213dp"
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
+        android:outlineSpotShadowColor="#ff9500"
+        android:outlineAmbientShadowColor="#ff9500"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewGoToLeasing"
         app:layout_constraintStart_toStartOf="@+id/cardViewGoToLeasing"
         app:layout_constraintTop_toBottomOf="@+id/cardViewGoToLeasing">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayoutSettingsActivity"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutSettingsActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/buttonToSettingsActivity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:background="@android:color/transparent"
-                        android:text="Settings"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+            <ImageView
+                android:id="@+id/imageViewSettings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/go_to_settings_stock_photo"
+                tools:layout_editor_absoluteX="-66dp"
+                tools:layout_editor_absoluteY="-34dp" />
+            <TextView
+                android:id="@+id/textLabelSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent"
+                android:text="Settings"
+                android:textAllCaps="false"
+                android:textColor="#ff9500"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
-                    <ImageView
-                        android:id="@+id/imageViewSettings"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/go_to_settings_stock_photo"
-                        tools:layout_editor_absoluteX="-66dp"
-                        tools:layout_editor_absoluteY="-34dp" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -154,6 +168,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toTopOf="@+id/textDesignedBy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToSettings">
+
+    </com.google.android.gms.ads.AdView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
