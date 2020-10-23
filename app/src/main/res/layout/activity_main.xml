@@ -45,6 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:text="Buy"
                 android:textAllCaps="false"
@@ -94,6 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:text="Lease"
                 android:textAllCaps="false"
@@ -136,12 +140,15 @@
                 android:src="@mipmap/go_to_settings_stock_photo"
                 tools:layout_editor_absoluteX="-66dp"
                 tools:layout_editor_absoluteY="-34dp" />
+
             <TextView
                 android:id="@+id/textLabelSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@android:color/transparent"
                 android:text="Settings"
                 android:textAllCaps="false"
