@@ -82,7 +82,7 @@ public class FinancingActivity extends AppCompatActivity {
             Double result = TestFinancing.payment;
 
             String outputPayment = String.valueOf(String.format("%.2f",result));
-            outputText.setText("Your " + TestFinancing.paymentFrequency + " payment is: $" + outputPayment);
+            outputText.setText("$" + outputPayment);
         }
     }
 

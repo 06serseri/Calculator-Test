@@ -15,16 +15,16 @@
         android:id="@+id/cardViewGoToFinancing"
         android:layout_width="213dp"
         android:layout_height="120dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="37dp"
+        android:outlineAmbientShadowColor="#ff9500"
+        android:outlineSpotShadowColor="#ff9500"
         app:cardCornerRadius="8dp"
         app:cardElevation="15dp"
-        android:outlineSpotShadowColor="#ff9500"
-        android:outlineAmbientShadowColor="#ff9500"
-        app:strokeColor="#ff9500"
-        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutFinancingActivity"
@@ -46,7 +46,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="3dp"
                 android:background="@android:color/transparent"
                 android:text="Buy"
                 android:textAllCaps="false"
@@ -67,15 +67,15 @@
         android:layout_width="213dp"
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
+        android:outlineAmbientShadowColor="#ff9500"
+        android:outlineSpotShadowColor="#ff9500"
         app:cardCornerRadius="8dp"
         app:cardElevation="15dp"
-        android:outlineSpotShadowColor="#ff9500"
-        android:outlineAmbientShadowColor="#ff9500"
-        app:strokeColor="#ff9500"
-        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewGoToFinancing"
         app:layout_constraintStart_toStartOf="@+id/cardViewGoToFinancing"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToFinancing">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToFinancing"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutToLeasingActivity"
@@ -97,7 +97,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="3dp"
                 android:background="@android:color/transparent"
                 android:text="Lease"
                 android:textAllCaps="false"
@@ -118,15 +118,15 @@
         android:layout_width="213dp"
         android:layout_height="120dp"
         android:layout_marginTop="16dp"
+        android:outlineAmbientShadowColor="#ff9500"
+        android:outlineSpotShadowColor="#ff9500"
         app:cardCornerRadius="8dp"
         app:cardElevation="15dp"
-        android:outlineSpotShadowColor="#ff9500"
-        android:outlineAmbientShadowColor="#ff9500"
-        app:strokeColor="#ff9500"
-        app:strokeWidth="0.7dp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewGoToLeasing"
         app:layout_constraintStart_toStartOf="@+id/cardViewGoToLeasing"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToLeasing">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToLeasing"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutSettingsActivity"
@@ -148,7 +148,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="3dp"
                 android:background="@android:color/transparent"
                 android:text="Settings"
                 android:textAllCaps="false"
@@ -168,7 +168,7 @@
         style="@style/AppTheme.Footnote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Designed by S2ci Labs"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -181,12 +181,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintBottom_toTopOf="@+id/textDesignedBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewGoToSettings">
+        app:layout_constraintEnd_toEndOf="@+id/textDesignedBy"
+        app:layout_constraintStart_toStartOf="@+id/textDesignedBy">
 
     </com.google.android.gms.ads.AdView>
 

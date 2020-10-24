@@ -6,19 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-    <TextView
-        android:id="@+id/textViewSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="218dp" />
 
     <Button
         android:id="@+id/buttonContactUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/custom_button_1"
         android:text="Contact Us"
         android:textAllCaps="false"
@@ -30,10 +23,11 @@
         android:id="@+id/buttonRateApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/custom_button_1"
         android:text="Rate App"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonContactUs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +37,23 @@
         android:id="@+id/textViewVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Version 1.1.4"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="476dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textDesignedBy"
+        app:layout_constraintEnd_toEndOf="@+id/textDesignedBy"
+        app:layout_constraintStart_toStartOf="@+id/textDesignedBy" />
+
+    <TextView
+        android:id="@+id/textDesignedBy"
+        style="@style/AppTheme.Footnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Designed by S2ci Labs"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

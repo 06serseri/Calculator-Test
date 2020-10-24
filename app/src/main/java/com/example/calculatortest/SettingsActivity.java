@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private static final String TAG = "Settings Activity";
     Button buttonRateApp, buttonContactUs;
+    TextView textDesignedBy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,5 +71,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         buttonRateApp = findViewById(R.id.buttonRateApp);
         buttonContactUs = findViewById(R.id.buttonContactUs);
+        textDesignedBy = findViewById(R.id.textDesignedBy);
     }
 }
