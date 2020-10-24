@@ -44,11 +44,13 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void contactUs() {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, "tunaalkan91@gmail.com");
-
-
-        intent.setType("message/rfc822");
+//        Intent intent = new Intent(Intent.ACTION_SEND);
+//        intent.putExtra(Intent.EXTRA_EMAIL, "tunaalkan91@gmail.com");
+//        intent.setType("message/rfc822");
+//        startActivity(Intent.createChooser(intent, "Choose an email client"));
+        //https://stackoverflow.com/questions/21720640/sending-email-from-android-app-when-click-on-button
+        Intent intent = new Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts("mailto", "tunaalkan91@gmail.com", null));
         startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
 
