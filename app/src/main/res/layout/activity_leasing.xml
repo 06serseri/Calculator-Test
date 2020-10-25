@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Leasing Term"
+        android:hint="Leasing Term (months)"
         android:inputType="numberDecimal"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="@+id/inputVehicleResidualValue"
@@ -149,7 +149,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="ca-app-pub-9291486472407895/2388908350"
         app:layout_constraintBottom_toTopOf="@+id/textDesignedBy"
         app:layout_constraintEnd_toEndOf="@+id/textDesignedBy"
         app:layout_constraintStart_toStartOf="@+id/textDesignedBy">
