@@ -26,9 +26,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Main Activity";
 
-    //TODO: Buttons does not work whole cardview should be clickable
     TextView textLabelBuy, textLabelLease, textLabelSettings;
-//    Button buttonToFinancingActivity, buttonToLeasingActivity, buttonToSettingsActivity;
     ConstraintLayout constraintLayoutParentMain, constraintLayoutFinancingActivity, constraintLayoutToLeasingActivity, constraintLayoutSettingsActivity;
     MaterialCardView cardViewGoToFinancing, cardViewGoToLeasing, cardViewGoToSettings;
     ImageView imageViewFinancing, imageViewToLeasing, imageViewSettings;
@@ -50,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        //https://stackoverflow.com/questions/17526533/moving-from-one-activity-to-another-activity-in-android
-        //https://www.youtube.com/watch?v=aS__9RbCyHg
         cardViewGoToFinancing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

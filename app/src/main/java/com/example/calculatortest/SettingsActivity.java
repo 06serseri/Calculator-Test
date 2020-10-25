@@ -17,7 +17,6 @@ import com.google.android.material.card.MaterialCardView;
 public class SettingsActivity extends AppCompatActivity {
 
     private static final String TAG = "Settings Activity";
-    Button buttonRateApp, buttonContactUs;
     MaterialCardView cardViewRateApp, cardViewContactUs;
     ImageView imageRateApp, imageContactUs;
     TextView textDesignedBy, textRateApp, textContactUs;
@@ -44,14 +43,8 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
     }
-    //TODO https://pixabay.comenau/illustrations/cell-cell-division-cell-membrane-3089947/
 
     private void contactUs() {
-//        Intent intent = new Intent(Intent.ACTION_SEND);
-//        intent.putExtra(Intent.EXTRA_EMAIL, "tunaalkan91@gmail.com");
-//        intent.setType("message/rfc822");
-//        startActivity(Intent.createChooser(intent, "Choose an email client"));
-        //https://stackoverflow.com/questions/21720640/sending-email-from-android-app-when-click-on-button
         Intent intent = new Intent(Intent.ACTION_SENDTO,
                 Uri.fromParts("mailto", "s3cilabs@gmail.com", null));
         startActivity(Intent.createChooser(intent, "Choose an email client"));
@@ -60,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void rateApp(View v) {
         try {
             startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=" + "com.android.chrome")));
+                    Uri.parse("market://details?id=" + getPackageName())));
         } catch (ActivityNotFoundException e) {
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
