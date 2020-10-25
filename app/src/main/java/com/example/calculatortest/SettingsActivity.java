@@ -9,13 +9,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.card.MaterialCardView;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private static final String TAG = "Settings Activity";
     Button buttonRateApp, buttonContactUs;
-    TextView textDesignedBy;
+    MaterialCardView cardViewRateApp, cardViewContactUs;
+    ImageView imageRateApp, imageContactUs;
+    TextView textDesignedBy, textRateApp, textContactUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +29,22 @@ public class SettingsActivity extends AppCompatActivity {
 
         initViews();
 
-        buttonContactUs.setOnClickListener(new View.OnClickListener() {
+        cardViewContactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 contactUs();
             }
         });
 
-        buttonRateApp.setOnClickListener(new View.OnClickListener() {
+        cardViewRateApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rateApp(v);
             }
         });
 
-        //https://incipia.co/post/app-development/what-should-your-app-include-in-settings/
-
-        //contact us
-        // current version
-
     }
+    //TODO https://pixabay.comenau/illustrations/cell-cell-division-cell-membrane-3089947/
 
     private void contactUs() {
 //        Intent intent = new Intent(Intent.ACTION_SEND);
@@ -52,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
 //        startActivity(Intent.createChooser(intent, "Choose an email client"));
         //https://stackoverflow.com/questions/21720640/sending-email-from-android-app-when-click-on-button
         Intent intent = new Intent(Intent.ACTION_SENDTO,
-                Uri.fromParts("mailto", "tunaalkan91@gmail.com", null));
+                Uri.fromParts("mailto", "s3cilabs@gmail.com", null));
         startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
 
@@ -69,8 +70,12 @@ public class SettingsActivity extends AppCompatActivity {
     private void initViews() {
         Log.d(TAG, "initViews: started");
 
-        buttonRateApp = findViewById(R.id.buttonRateApp);
-        buttonContactUs = findViewById(R.id.buttonContactUs);
+        cardViewRateApp = findViewById(R.id.cardViewRateApp);
+        cardViewContactUs = findViewById(R.id.cardViewContactUs);
+        imageRateApp = findViewById(R.id.imageRateApp);
+        imageContactUs = findViewById(R.id.imageContactUs);
+        textRateApp = findViewById(R.id.textRateApp);
+        textContactUs = findViewById(R.id.textContactUs);
         textDesignedBy = findViewById(R.id.textDesignedBy);
     }
 }

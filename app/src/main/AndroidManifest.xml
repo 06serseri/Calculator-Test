@@ -19,13 +19,13 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".LeasingActivity"
-            android:label="Leasing"
+            android:label="Lease"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FinancingActivity"
-            android:label="Financing"
+            android:label="Buy"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity" android:label="Car Payment">
+        <activity android:name=".MainActivity" android:label="Lease Calculator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

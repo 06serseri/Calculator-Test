@@ -3,35 +3,111 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="20dp"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
 
-    <Button
-        android:id="@+id/buttonContactUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/custom_button_1"
-        android:text="Contact Us"
-        android:textAllCaps="false"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewRateApp"
+        android:layout_width="213dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="37dp"
+        android:outlineAmbientShadowColor="#ff9500"
+        android:outlineSpotShadowColor="#ff9500"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRateApp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp">
 
-    <Button
-        android:id="@+id/buttonRateApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/custom_button_1"
-        android:text="Rate App"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/buttonContactUs"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutRateApp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageRateApp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/rate_app_3"
+                tools:layout_editor_absoluteX="-66dp"
+                tools:layout_editor_absoluteY="-34dp" />
+
+            <TextView
+                android:id="@+id/textRateApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/transparent"
+                android:text="Rate App"
+                android:textAllCaps="false"
+                android:textColor="#ff9500"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewContactUs"
+        android:layout_width="213dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:outlineAmbientShadowColor="#ff9500"
+        android:outlineSpotShadowColor="#ff9500"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewRateApp"
+        app:layout_constraintStart_toStartOf="@+id/cardViewRateApp"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewRateApp"
+        app:strokeColor="#ff9500"
+        app:strokeWidth="0.7dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutContactUs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageContactUs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/contact_us_5"
+                tools:layout_editor_absoluteX="-66dp"
+                tools:layout_editor_absoluteY="-34dp" />
+
+            <TextView
+                android:id="@+id/textContactUs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/transparent"
+                android:text="Contact Us"
+                android:textAllCaps="false"
+                android:textColor="#ff9500"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/textViewVersion"
@@ -48,8 +124,8 @@
         style="@style/AppTheme.Footnote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Designed by S2ci Labs"
+        android:layout_marginBottom="4dp"
+        android:text="Designed by S3ci Labs"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

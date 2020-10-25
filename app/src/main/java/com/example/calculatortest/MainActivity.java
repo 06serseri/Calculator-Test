@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initViews();
-
+        //TODO Update Ad ID
         //ca-app-pub-9425777381690046~6829510960
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
